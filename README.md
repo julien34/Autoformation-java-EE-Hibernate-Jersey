@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gestion d'utilisateur
 <h3>Application de gestion des utilisateurs</h3>
 
@@ -22,6 +21,3 @@ Puis faire un clic droit sur le serveur et "Lancer" :<br/>
 
 Une fois que le serveur est démarré, la barre de chargement atteint les 100% (en bas à droite de l'écran) :<br/>
 <img src="http://img15.hostingpics.net/pics/291462serveur3.png"/>
-=======
-# Projet-autoformation-Android
->>>>>>> refs/remotes/origin/master
