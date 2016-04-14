@@ -1,0 +1,47 @@
+body {
+	text-align : center;
+	/*background : #84ecaf;*/
+	background : url("../img/background.jpg") no-repeat fixed center;
+}
+
+.logoAccueil {
+	width : 25%;
+	margin-top : 1%;
+}
+
+@font-face {
+	font-family: 'bellota';
+	src: url("../fonts/Bellota-Regular.ttf");
+}
+
+h1{
+	font-family : bellota;
+	font-size : 60px;
+	padding : 3%;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.btnSeConnecter {
+	padding : 1%;
+	color : white;
+	background : #27ae60;
+}
+
+.btnSeConnecter:hover {
+	background : #84ecaf;
+	text-decoration: none;
+	color : white;
+}
+
+.btnSInscrire {
+	padding : 1%;
+	color : white;
+	background : #27ae60;
+}
+
+.btnSInscrire:hover {
+	background : #84ecaf;
+	text-decoration: none;
+	color : white;
+}

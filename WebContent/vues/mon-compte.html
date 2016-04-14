@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="mon-compte-controller">
+<head>
+	<!-- imports -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	<script type="text/javascript" src="/RestProject/js/sha512.js"></script>
+	<script type="text/javascript" src="/RestProject/js/controllers/controllerMonCompte.js"></script>
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/RestProject/css/mon-compte.css"/>
+		
+	<meta charset="UTF-8">
+	<title>{{controller.name}}</title>
+</head>
+
+<body ng-controller="ControleurMonCompte" ng-init="getUser()">
+
+	<div class="formulaireDeModification col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4"">
+		<h2>Les informations de votre compte</h2>
+		<p>Pour les modifier, renseignez les différents champs et validez.</p>
+		
+		<form ng-submit="majUser()">
+		
+			<input class="form-control input-lg" type="email" ng-model="user.email" disabled/>
+			<input class="form-control input-lg" type="text" ng-model="user.prenom" required/>
+			<input class="form-control input-lg" type="text" ng-model="user.nom" required/>
+			<input class="form-control input-lg" type="password" ng-model="password" required/>
+			
+			<button class="btn btn-lg btn-success" type="submit">Valider</button>
+		</form>
+	
+	</div>
+</body>
+</html>

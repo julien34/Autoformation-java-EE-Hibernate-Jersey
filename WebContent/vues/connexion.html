@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="connexion-controller">
+<head ng-controller="ControleurConnexionHead">
+<!-- imports -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+<script type="text/javascript" src="/RestProject/js/sha512.js"></script>
+<script type="text/javascript" src="/RestProject/js/controllers/controllerConnexion.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<!-- Styles -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/RestProject/css/connexion.css"/>
+
+<meta charset="UTF-8">
+<title>{{controller.name}}</title>
+</head>
+<body ng-controller="ControleurConnexion">
+	
+	<!-- Annimation de chargement -->
+	<div ng-show="chargement" class="loader"></div>
+	
+	<!-- Page de connexion -->
+	<div ng-show="vueConnexion" class="formulaireDeConnexion col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+		<h1> <span class="glyphicon glyphicon-log-in"></span> Connexion</h1>
+		
+		<!-- En cas d'erreur login -->
+		<p ng-show="erreur" class="text-danger"><span class="glyphicon glyphicon-remove-sign"></span> Mot de passe / login incorrect.</p>
+		
+		<form ng-submit="connexion()">
+		
+			<!-- Formulaire de connexion -->
+			<div class="col-xs-12">
+			
+				<!-- champ email -->
+				<input type="email" class="form-control input-lg" placeholder="Email" ng-model="email" required />
+			
+				<!-- champ mot de passe -->
+				<input type="password" class="form-control input-lg" placeholder="Mot de passe" ng-model="password" required />
+			</div>
+			
+			<!-- Bouton de connexion -->
+			<button type="submit" class="btn btn-lg btn-success">Connexion</button>
+			
+			<p class="text-default">Vous n'avez pas de compte ? <a href="inscription.html">Inscrivez-vous</a> !</p>
+		</form>
+	</div>
+	
+	<!-- Retour menu principal -->
+	<p ng-show="vueConnexion" class="text-default col-xs-12"><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Accueil</a></p>
+	
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?> 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd"> 
+  
+<hibernate-mapping> 
+  
+  
+  	<!-- Table User -->
+    <class name="dto.UserDto" table="users">
+    
+    	<!-- Clé primaire -->
+    	<id name="id" type="string" column="idUser">
+			<generator class="native"/>
+		</id>
+		
+		<property name="nom" column="nomUser" type="string" not-null="true" />
+		<property name="prenom" column="prenomUser" type="string" not-null="true" />
+		<property name="email" column="emailUser" type="string" />
+		<property name="password" column="passwordUser" type="string" not-null="true" />
+		
+		
+    </class> 
+  
+</hibernate-mapping>

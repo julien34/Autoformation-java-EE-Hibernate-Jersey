@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="inscription-controller">
+<head ng-controller="ControllerInscriptionHead">
+
+	<!-- imports -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+	<script type="text/javascript" src="/RestProject/js/sha512.js"></script>
+	<script type="text/javascript" src="/RestProject/js/controllers/controllerInscription.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+	
+	<!-- Styles -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/RestProject/css/inscription.css"/>
+	
+	<meta charset="UTF-8">
+	<title>{{controller.name}}</title>
+</head>
+<body ng-controller="ControleurInscription">
+
+	<!-- Annimation de chargement -->
+	<div ng-show="chargement" class="loader"></div>
+	
+	<!-- Vue en cas de validation d'inscription-->
+	<h1 ng-show="vueInscriptionValid" class="text-success"><span class="glyphicon glyphicon-ok"></span> Votre inscription a été prise en compte !</h1>
+	<h4 ng-show="vueInscriptionValid" class="text-default"><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Accueil</a></h4>
+
+	<!-- Page d'inscription -->
+	<div ng-show="vueInscription" class="formulaireDInscription col-xs-12 col-sm-8 col-md-6 col-lg-4 col-sm-offset-2 col-md-offset-3 col-lg-offset-4">
+	
+		<!-- Titre -->
+		<h1><span class="glyphicon glyphicon-user"></span> Inscrivez-vous</h1>
+		
+		<!-- Gestion des messages d'erreur -->
+		<p ng-show="erreurMDP" class="text-danger">Les mots de passe ne correspondent pas.</p>
+		<p ng-show="erreurInscription" class="text-danger">Une erreur est suvenue lors de l'inscription, merci de re-essayer.</p>
+	
+		<!-- Formulaire d'inscription-->
+		<form ng-submit="validerInscription()">
+
+			<!-- champ prénom -->
+			<input class="form-control input-lg" type="text" ng-model="prenom" placeholder="Prénom" required />
+
+			<!-- champ nom -->
+			<input class="form-control input-lg" type="text" ng-model="nom" placeholder="Nom" required />
+
+
+			<!-- champ email -->
+			<input class="form-control input-lg" type="email" ng-model="email" placeholder="E-mail" required />
+
+			<!-- champ mot de passe -->
+			<input class="form-control input-lg" type="password" ng-model="password" placeholder="Mot de passe" required />
+			<input class="form-control input-lg" type="password" ng-model="password2" placeholder="Confirmation" required/>
+
+			<button type="submit" class="btn btn-lg btn-primary">Valider</button>
+		</form>
+	</div>
+	
+	<!-- Retour menu principal -->
+	<p ng-show="vueInscription" class="text-default col-xs-12"><a href="../index.html"><span class="glyphicon glyphicon-home"></span> Accueil</a></p>
+
+</body>
+</html>
